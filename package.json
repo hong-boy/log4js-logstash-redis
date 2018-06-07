@@ -1,0 +1,23 @@
+{
+  "name": "@hong-boy/log4js-logstash-redis",
+  "version": "2.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hong-boy/log4js-logstash-redis.git"
+  },
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/hong-boy/log4js-logstash-redis/issues"
+  },
+  "homepage": "https://github.com/hong-boy/log4js-logstash-redis#readme",
+  "dependencies": {
+    "ioredis": "^3.2.2",
+    "log4js": "^2.8.0"
+  }
+}
