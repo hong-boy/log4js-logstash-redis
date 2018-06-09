@@ -3,9 +3,9 @@
 const Redis = require('ioredis');
 const util = require('util');
 const layouts = require('log4js').layouts;
-let redis = null;
 
 function logstashRedis(config, layout) {
+    let redis = null;
     layout = layout || layouts.dummyLayout;
     if(!config.fields) {
         config.fields = {};
