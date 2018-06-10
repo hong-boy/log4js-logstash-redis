@@ -15,20 +15,11 @@ function logstashRedis(config, layout) {
         if(!redis){
             redis = config.redis ? new Redis(config.redis) : new Redis();
         }
-        if (loggingEvent.data.length > 1) {
-            const secondEvData = loggingEvent.data[1];
-            for (let k in secondEvData) {
-                config.fields[k] = secondEvData[k];
-            }
-        }
-        config.fields.level = loggingEvent.level.levelStr;
-
         const logObject = {
             '@version': '1',
             '@timestamp': (new Date(loggingEvent.startTime)).toISOString(),
             type: config.logType ? config.logType : config.category,
-            message: layout(loggingEvent),
-            fields: config.fields
+            message: layout(loggingEvent)
         };
         sendLog(redis, config.key, logObject);
     };
